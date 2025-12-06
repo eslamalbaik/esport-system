@@ -1,0 +1,668 @@
+/* ============ Tokens / Base ============ */
+:root{
+  --bg:#000;
+  --text:#fff;
+  --muted:#d9dadd;
+  --field:#d8d8d9;
+  --placeholder:#d21f2a;
+  --accent:#e11d2e;
+  --accent-dark:#a3121c;
+  --tab-gray-1:#cfd2d8;
+  --tab-gray-2:#8e9096;
+
+  --radius-xl:18px;
+  --radius-lg:14px;
+  --radius-md:12px;
+}
+
+.reg{
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  padding: 48px min(5vw,28px) 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle red shards */
+.reg::before, .reg::after{
+  content:"";
+  position:absolute;
+  top: 50%;
+  width: 0; height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 26px solid var(--accent);
+  filter: drop-shadow(0 2px 0 var(--accent-dark));
+}
+.reg::before{ left: -12px; transform: rotate(-24deg) translateY(120px); }
+.reg::after{ right: -12px; transform: rotate(22deg) translateY(-80px); }
+
+/* header pill */
+.reg__pill{
+  margin: 0 auto 26px;
+  display:inline-block;
+  padding: 14px 38px;
+  border-radius: 999px;
+  background: var(--accent);
+  color:#fff;
+  font-weight: 800;
+  letter-spacing:.2px;
+  line-height:1;
+  box-shadow: 0 12px 26px rgba(225,29,46,.35);
+}
+
+/* layout */
+.reg__wrap{
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 370px 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+/* left rail */
+.tabs{
+  display: grid;
+  gap: 0px;
+  margin-bottom: 24px;
+  width: min(330px, 100%);
+}
+.tab{
+  display:inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  color:#fff;
+  width: fit-content;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+}
+.tab--gray{ background: linear-gradient(var(--tab-gray-1),var(--tab-gray-2)); }
+.tab--red{ background: var(--accent); }
+.tab--sm{ padding: 8px 14px; }
+
+.phoenix{
+  position: relative;
+  width: min(356px, 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0;
+  box-shadow: 16px 0 0 0 var(--accent);
+}
+.phoenix img{ display:block; width:100%; height:auto; }
+.phoenix__badge{
+  position:absolute; left:8px; bottom:-12px;
+  width:84%; height:58px; border-radius:10px; overflow:hidden;
+  background: rgba(0,0,0,.55); outline: 2px solid rgba(255,255,255,.06);
+}
+.phoenix__badge > span{ display:block; width:100%; height:100%; }
+
+/* right */
+.reg__right{ position: relative; padding-top: 8px; }
+
+/* avatar */
+.avatar{
+  position:absolute; top:0; right:0;
+  width: 212px; height: 212px;
+  border-radius: 26px; overflow:hidden;
+}
+.avatar img{ width:100%; height:100%; object-fit: cover; }
+
+/* ===== SINGLE-COLUMN FORM ===== */
+.reg-form{
+  margin-top: 54px;         /* clears the avatar */
+  display: grid;
+  grid-template-columns: 1fr;   /* <-- single column */
+  gap: 10px;                    /* vertical rhythm between fields */
+  max-width: 780px;             /* match wide inputs from mock */
+}
+.field{ display:flex; flex-direction: column; gap: 10px; }
+.field label{ font-weight: 700; color:#fff; font-size: 18px; }
+
+/* inputs */
+.field input{
+  width: 100%;
+  height: 62px;
+  border-radius: 18px;
+  border: 0;
+  background: var(--field);
+  color:#111;
+  padding: 0 22px;
+  font-size: 18px;
+  font-weight: 700;
+  outline: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25) inset;
+}
+.field input::placeholder{ color: var(--placeholder); font-weight: 800; }
+
+.actions{
+  display:flex; justify-content: flex-start;
+  padding-top: 6px;
+}
+.btn-register{
+  display:inline-block;
+  min-width: 320px;
+  height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color:#fff;
+  font-weight: 800;
+  letter-spacing:.2px;
+  cursor:pointer;
+  transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
+  box-shadow: 0 12px 24px rgba(225,29,46,.35);
+}
+.btn-register:hover{ transform: translateY(-1px); filter: brightness(1.06); }
+.btn-register:active{ transform: none; }
+
+
+.right-field{
+  width: 50%;
+   margin-left: 50%;
+
+}
+
+
+/* responsive tweaks */
+@media (max-width: 1100px){
+  .avatar{ position: static; margin-left: auto; margin-bottom: 18px; }
+  .reg-form{ margin-top: 10px; }
+}
+@media (max-width: 920px){
+  .reg__wrap{ grid-template-columns: 1fr; }
+  .tabs,.phoenix{ margin-inline: auto; }
+  .reg-form{ max-width: 100%; }
+}
+@media (max-width: 540px){
+  .btn-register{ width:100%; min-width: 0; }
+}
+
+
+/* ===== MOBILE RESPONSIVE PATCH (append to the end of reg-team.css) ===== */
+
+/* 1) Compact typography + comfortable fields on tablets */
+@media (max-width: 820px) {
+  .subhead {
+    font-size: 20px;
+  }
+  .field label {
+    font-size: 16px;
+  }
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="tel"] {
+    height: 56px;
+    font-size: 16px;
+  }
+  .file-field {
+    height: 56px;
+  }
+  .pill {
+    padding: 12px 28px;
+  }
+  .tabs {
+    gap: 6px;
+  }
+    .right-field{
+  width: 50%;
+   margin-left: 36%;
+}
+}
+
+/* 2) Single-column form sooner on narrow tablets; keep left panel centered */
+@media (max-width: 820px) {
+  .team-form {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  /* kill any inline margin-left that was used to create the 2nd column */
+  .team-form .field[style*="margin-left"] {
+    margin-left: 0 !important;
+  }
+  /* ensure inputs stretch full width */
+  .team-form .field {
+    width: 85%;
+  }
+  .phoenix{
+    display: none;
+  }
+    .right-field{
+  width: 50%;
+   margin-left: 36%;
+}
+}
+
+/* 3) Phone layout polish */
+@media (max-width: 560px) {
+  /* Wrap becomes single column already in your CSS; add spacing polish */
+  .rt-wrap {
+    gap: 20px;
+  }
+
+  /* Tabs: keep them readable and centered */
+  .tabs {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+    gap: 8px;
+  }
+  .tab {
+    width: auto;
+    text-align: center;
+  }
+
+  /* Phoenix card: keep the badge inside and readable */
+  .phoenix {
+      display: none;
+  }
+  .phoenix__badge {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    height: 52px;
+    bottom: -10px;
+  }
+
+  /* Avatar moves to the flow in your CSS at 980px; keep it compact on phones */
+  .avatar {
+    width: 180px;
+    height: 180px;
+    margin: auto;
+  }
+
+  /* Inputs and file field */
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="tel"] {
+    height: 52px;
+    font-size: 15px;
+  }
+  .file-field {
+    height: 52px;
+    padding: 0 16px;
+  }
+  .file-field .file-placeholder {
+    font-size: 16px;
+  }
+
+  /* Submit button full width */
+  .btn-register {
+    width: 100%;
+    min-width: 0;
+    font-size: 18px;
+    height: 46px;
+  }
+  .right-field{
+  width: 50%;
+   margin-left: 36%;
+}
+}
+
+/* 4) Very small phones */
+@media (max-width: 400px) {
+  .pill {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .avatar {
+    width: 160px;
+    height: 160px;
+  }
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="tel"] {
+    height: 50px;
+  }
+  .file-field {
+    height: 50px;
+  }
+    .right-field{
+  width: 50%;
+   margin-left: 36%;
+}
+
+}
+
+/* 5) Prevent any horizontal scrolling caused by long words/labels */
+.reg-team,
+.rt-wrap,
+.team-form {
+  overflow-x: hidden;
+}
+.field label,
+.tab,
+.pill {
+  white-space: nowrap;
+}
+  .field{
+    width:50%
+  }
+
+
+  /* footer */
+
+/* Footer */
+.footer {
+  background: #000;
+  padding: 50px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.footer-links .col h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.footer-links .col a,
+.footer-links .col p {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  font-size: 16px;
+  line-height: 10px;
+  color: #ffffff;
+}
+
+/* Gradient bar */
+.gradient-bar {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  background: linear-gradient(
+    to bottom,
+    #ff0000 0%,
+    #b30000 10%,
+    #000000 40%,
+    #000000 60%,
+    #b30000 90%,
+    #ff0000 100%
+  );
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4) inset, 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+/* header */
+
+/* Navbar on mobile */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 15px 60px;
+  background: var(--bg);
+  border-bottom: 1px solid #222;
+  position: relative;
+  z-index: 1000;
+  background-color: #000000;
+}
+
+/* NAVBAR STYLES MOVED TO navbar.css - commenting out to prevent conflicts */
+
+.logo {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.logo-img {
+  height: 54px;
+  display: block;
+}
+
+.navbar-toggle {
+  display: none;
+} 
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.nav-links a {
+  padding: 10px 4px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+/* ===== Mobile layout - MOVED TO navbar.css ===== */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  .logo-img {
+    height: 42px;
+  }
+
+  .footer-logo {
+    width: 100%;
+  }
+  .footer-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* HAMBURGER AND NAV STYLES MOVED TO navbar.css  */
+  .navbar-toggler {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute !important;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 28px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1002; /* above the dropdown panel */
+  }
+
+  /* Hamburger lines */
+  .hamburger-line {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .hamburger-line:nth-child(1) {
+    top: 6px;
+  }
+  .hamburger-line:nth-child(2) {
+    top: 12px;
+  }
+  .hamburger-line:nth-child(3) {
+    top: 18px;
+  }
+
+  /* Checkbox takes no layout space on mobile */
+  .navbar-toggle {
+    display: none !important;
+  }
+
+  /* Turn the inline link row into a dropdown panel under the header */
+  .nav-links {
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-top: 1px solid #222;
+    display: block !important; /* override desktop flex row */
+    max-height: 0; /* collapsed by default */
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    z-index: 1001; /* below the toggler */
+  }
+  .nav-links a {
+    display: block;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Open the dropdown when the (hidden) checkbox is checked */
+  .navbar-toggle:checked ~ .nav-links {
+    max-height: 70vh; /* enough space to reveal all links */
+  }
+
+  /* Hamburger morphs to X when open */
+  .navbar-toggle:checked + .navbar-toggler .hamburger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .navbar-toggle:checked + .navbar-toggler .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar-toggle:checked + .navbar-toggler .hamburger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+/* ===== Small polish (optional, nice defaults) ===== */
+@media (max-width: 768px) {
+  /* Hide any horizontal scrollbar in the dropdown */
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-links {
+    scrollbar-width: none;
+  }
+}
+
+/* Solid black dropdown background on mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    background: #000 !important; /* override any var(--bg) / transparency */
+    backdrop-filter: none !important;
+  }
+  /* Keep links themselves transparent so the panel's black shows through */
+  .nav-links a {
+    background: transparent;
+  }
+}
+
+/* === Navbar link hover animation === */
+.nav-links a {
+  position: relative;
+  transition: color .25s ease, transform .25s ease;
+}
+
+/* underline (no layout shift) */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -6px;                  /* sits just below the text */
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+  opacity: .9;
+}
+
+/* hover / focus styles */
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #ff3a3f;                /* your accent red */
+  transform: translateY(-1px);   /* subtle lift */
+}
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* active page state (optional) */
+.nav-links a[aria-current="page"] {
+  color: #ff3a3f;
+}
+.nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Reduce motion preference: keep color change, skip movement */
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a,
+  .nav-links a::after {
+    transition: color .001s linear;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    transform: none;
+  }
+  .nav-links a:hover::after,
+  .nav-links a:focus-visible::after {
+    transform: none;
+    width: 100%;
+  }
+}
+
+
+.right-panel {
+  flex: 1.2;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* text-align: center; */
+}
+
+
+.tab-btn {
+  border: none;
+  background: #a79c8e;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.tab-btn:hover {
+  background-color: #ff2a2a;
+}
+
+.tab-btn.active:hover {
+  background: #ff2a2a;
+}
+
+.tab-btn.active {
+  background: rgb(228, 11, 11);
+  font-weight: 800;
+}
+

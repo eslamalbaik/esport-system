@@ -1,0 +1,175 @@
+{
+  "resources/css/about.css": {
+    "file": "assets/about-BWnuxKDs.css",
+    "src": "resources/css/about.css",
+    "isEntry": true,
+    "names": [
+      "about.css"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-8TH8zlcS.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/auth-fixes.css": {
+    "file": "assets/auth-fixes-CDhbBWdA.css",
+    "src": "resources/css/auth-fixes.css",
+    "isEntry": true,
+    "names": [
+      "auth-fixes.css"
+    ]
+  },
+  "resources/css/gallery.css": {
+    "file": "assets/gallery-DN2xz3bn.css",
+    "src": "resources/css/gallery.css",
+    "isEntry": true,
+    "names": [
+      "gallery.css"
+    ]
+  },
+  "resources/css/home.css": {
+    "file": "assets/home-iiiG72g0.css",
+    "src": "resources/css/home.css",
+    "isEntry": true,
+    "names": [
+      "home.css"
+    ]
+  },
+  "resources/css/home.rtl.css": {
+    "file": "assets/home-DHbxMlI3.css",
+    "src": "resources/css/home.rtl.css",
+    "isEntry": true,
+    "names": [
+      "home.css"
+    ]
+  },
+  "resources/css/navbar.css": {
+    "file": "assets/navbar-BRtob_cO.css",
+    "src": "resources/css/navbar.css",
+    "isEntry": true,
+    "names": [
+      "navbar.css"
+    ]
+  },
+  "resources/css/ourservices.css": {
+    "file": "assets/ourservices-D75tda8t.css",
+    "src": "resources/css/ourservices.css",
+    "isEntry": true,
+    "names": [
+      "ourservices.css"
+    ]
+  },
+  "resources/css/partner_show.css": {
+    "file": "assets/partner_show-UXoEFtqt.css",
+    "src": "resources/css/partner_show.css",
+    "isEntry": true,
+    "names": [
+      "partner_show.css"
+    ]
+  },
+  "resources/css/partners.css": {
+    "file": "assets/partners-BcAFM13v.css",
+    "src": "resources/css/partners.css",
+    "isEntry": true,
+    "names": [
+      "partners.css"
+    ]
+  },
+  "resources/css/privacy.css": {
+    "file": "assets/privacy-qTWMAGW-.css",
+    "src": "resources/css/privacy.css",
+    "isEntry": true,
+    "names": [
+      "privacy.css"
+    ]
+  },
+  "resources/css/reg-single.css": {
+    "file": "assets/reg-single-BKALD88n.css",
+    "src": "resources/css/reg-single.css",
+    "isEntry": true,
+    "names": [
+      "reg-single.css"
+    ]
+  },
+  "resources/css/reg-team.css": {
+    "file": "assets/reg-team-DBsLk45b.css",
+    "src": "resources/css/reg-team.css",
+    "isEntry": true,
+    "names": [
+      "reg-team.css"
+    ]
+  },
+  "resources/css/style.css": {
+    "file": "assets/style-eClc90AI.css",
+    "src": "resources/css/style.css",
+    "isEntry": true,
+    "names": [
+      "style.css"
+    ]
+  },
+  "resources/css/team.css": {
+    "file": "assets/team-Cf38iTwy.css",
+    "src": "resources/css/team.css",
+    "isEntry": true,
+    "names": [
+      "team.css"
+    ]
+  },
+  "resources/css/team_show.css": {
+    "file": "assets/team_show-D1Wk_xgq.css",
+    "src": "resources/css/team_show.css",
+    "isEntry": true,
+    "names": [
+      "team_show.css"
+    ]
+  },
+  "resources/css/terms.css": {
+    "file": "assets/terms-BSmlhTiC.css",
+    "src": "resources/css/terms.css",
+    "isEntry": true,
+    "names": [
+      "terms.css"
+    ]
+  },
+  "resources/css/tournaments.css": {
+    "file": "assets/tournaments-CigtOYAd.css",
+    "src": "resources/css/tournaments.css",
+    "isEntry": true,
+    "names": [
+      "tournaments.css"
+    ]
+  },
+  "resources/css/tours-reg.css": {
+    "file": "assets/tours-reg-DsrR8ERR.css",
+    "src": "resources/css/tours-reg.css",
+    "isEntry": true,
+    "names": [
+      "tours-reg.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CkG-6Rcw.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-8TH8zlcS.css"
+    ]
+  },
+  "resources/js/home.js": {
+    "file": "assets/home-BRk26llo.js",
+    "name": "home",
+    "src": "resources/js/home.js",
+    "isEntry": true
+  },
+  "resources/js/script.js": {
+    "file": "assets/script-5ao6vZBL.js",
+    "name": "script",
+    "src": "resources/js/script.js",
+    "isEntry": true
+  }
+}

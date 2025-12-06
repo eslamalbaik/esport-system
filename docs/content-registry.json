@@ -1,0 +1,264 @@
+{
+  "entries": [
+    {
+      "key": "home.hero.title",
+      "group": "home",
+      "type": "text",
+      "label": "Hero Title",
+      "help": "Main headline displayed prominently in the hero section",
+      "max": 80,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "home.hero.subtitle",
+      "group": "home",
+      "type": "text",
+      "label": "Hero Subtitle",
+      "help": "Supporting text below the main hero title",
+      "max": 150,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "home.hero.description",
+      "group": "home",
+      "type": "text",
+      "label": "Hero Description",
+      "help": "Detailed description text in the hero section",
+      "max": 300,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "home.hero.image",
+      "group": "home",
+      "type": "image",
+      "label": "Hero Background Image",
+      "help": "Main background image for the hero section",
+      "preferredWidth": 1600,
+      "preferredHeight": 900,
+      "allowedExtensions": ["png", "jpg", "jpeg", "webp"],
+      "maxBytes": 5242880
+    },
+    {
+      "key": "home.services.title",
+      "group": "home",
+      "type": "text",
+      "label": "Services Section Title",
+      "help": "Heading for the services section",
+      "max": 60,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "home.services.description",
+      "group": "home",
+      "type": "text",
+      "label": "Services Section Description",
+      "help": "Brief description of services offered",
+      "max": 200,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "home.tournaments.title",
+      "group": "home",
+      "type": "text",
+      "label": "Tournaments Section Title",
+      "help": "Heading for the popular tournaments section",
+      "max": 60,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "home.tournaments.subtitle",
+      "group": "home",
+      "type": "text",
+      "label": "Tournaments Section Subtitle",
+      "help": "Supporting text for tournaments section",
+      "max": 100,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "home.cta.title",
+      "group": "home",
+      "type": "text",
+      "label": "Call to Action Title",
+      "help": "Main call-to-action heading",
+      "max": 50,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "home.cta.button",
+      "group": "home",
+      "type": "text",
+      "label": "Call to Action Button Text",
+      "help": "Text displayed on the main CTA button",
+      "max": 25,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "about.header.title",
+      "group": "about",
+      "type": "text",
+      "label": "Page Header Title",
+      "help": "Main title at the top of the about page",
+      "max": 60,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "about.header.subtitle",
+      "group": "about",
+      "type": "text",
+      "label": "Page Header Subtitle",
+      "help": "Supporting text below the main about page title",
+      "max": 120,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "about.mission.title",
+      "group": "about",
+      "type": "text",
+      "label": "Mission Section Title",
+      "help": "Heading for the mission statement section",
+      "max": 60,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "about.mission.description",
+      "group": "about",
+      "type": "text",
+      "label": "Mission Description",
+      "help": "Detailed mission statement content",
+      "max": 500,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "about.mission.image",
+      "group": "about",
+      "type": "image",
+      "label": "Mission Section Image",
+      "help": "Supporting image for the mission statement",
+      "preferredWidth": 800,
+      "preferredHeight": 600,
+      "allowedExtensions": ["png", "jpg", "jpeg", "webp"],
+      "maxBytes": 3145728
+    },
+    {
+      "key": "about.team.title",
+      "group": "about",
+      "type": "text",
+      "label": "Team Section Title",
+      "help": "Heading for the team section",
+      "max": 60,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "about.team.description",
+      "group": "about",
+      "type": "text",
+      "label": "Team Section Description",
+      "help": "Description of the team and company culture",
+      "max": 300,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "partners.header.title",
+      "group": "partners",
+      "type": "text",
+      "label": "Partners Page Title",
+      "help": "Main title for the partners page",
+      "max": 60,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "partners.header.description",
+      "group": "partners",
+      "type": "text",
+      "label": "Partners Page Description",
+      "help": "Introduction text about partnerships",
+      "max": 200,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "partners.banner.image",
+      "group": "partners",
+      "type": "image",
+      "label": "Partners Banner Image",
+      "help": "Main banner image for the partners page",
+      "preferredWidth": 1200,
+      "preferredHeight": 400,
+      "allowedExtensions": ["png", "jpg", "jpeg", "webp"],
+      "maxBytes": 4194304
+    },
+    {
+      "key": "partners.benefits.title",
+      "group": "partners",
+      "type": "text",
+      "label": "Partnership Benefits Title",
+      "help": "Heading for the benefits section",
+      "max": 60,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "partners.benefits.description",
+      "group": "partners",
+      "type": "text",
+      "label": "Partnership Benefits Description",
+      "help": "Details about benefits of partnering with us",
+      "max": 400,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "partners.contact.title",
+      "group": "partners",
+      "type": "text",
+      "label": "Partnership Contact Title",
+      "help": "Heading for the contact section",
+      "max": 50,
+      "requiredEN": true,
+      "requiredAR": false
+    },
+    {
+      "key": "partners.contact.description",
+      "group": "partners",
+      "type": "text",
+      "label": "Partnership Contact Description",
+      "help": "Instructions for getting in touch about partnerships",
+      "max": 250,
+      "requiredEN": true,
+      "requiredAR": false
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "created": "2025-10-14",
+    "description": "Content registry for bilingual esports CMS",
+    "totalEntries": 23,
+    "groups": {
+      "home": 10,
+      "about": 7,
+      "partners": 6
+    },
+    "notes": [
+      "All text keys require EN content, AR is optional",
+      "Image paths follow format: key.extension",
+      "Files stored in public/content-images/",
+      "Cache keys: cms:content:{key}:{locale} for text, cms:content-media:{key} for images"
+    ]
+  }
+}

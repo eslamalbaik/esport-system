@@ -1,0 +1,743 @@
+/* ===== ADMIN DASHBOARD RESPONSIVE STYLES ===== */
+
+/* Mobile Menu Toggle Button */
+.admin-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1002 !important;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 58, 63, 0.9);
+  border: 1px solid rgba(255, 58, 63, 0.3);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: none;
+}
+
+.admin-menu-toggle:focus {
+  outline: 2px solid rgba(255, 58, 63, 0.5);
+  outline-offset: 2px;
+}
+
+.admin-menu-toggle:hover {
+  background: rgba(255, 58, 63, 1);
+  transform: scale(1.05);
+}
+
+.admin-menu-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Sidebar Styles - Desktop */
+.admin-sidebar {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+  position: relative;
+  display: block;
+}
+
+/* Ensure sidebar is visible on desktop */
+@media (min-width: 769px) {
+  .admin-sidebar {
+    position: relative !important;
+    transform: translateX(0) !important;
+    width: 256px !important;
+    min-width: 256px !important;
+    height: auto !important;
+    max-height: 100vh !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .admin-menu-toggle {
+    display: none !important;
+  }
+  
+  .admin-sidebar-overlay {
+    display: none !important;
+  }
+}
+
+/* Overlay for mobile menu */
+.admin-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.admin-sidebar-overlay.active {
+  display: block !important;
+  opacity: 1 !important;
+  z-index: 999 !important;
+}
+
+/* Main Content Area */
+.admin-main {
+  transition: margin-left 0.3s ease;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Header Responsive */
+.admin-header {
+  position: relative;
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.admin-header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.admin-header h1 {
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: break-word;
+  margin: 0;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.admin-header-actions a {
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Back button responsive text */
+.admin-header-actions a .hidden {
+  display: none;
+}
+
+.admin-header-actions a .sm\\:inline {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .admin-header-actions a .hidden {
+    display: inline;
+  }
+  
+  .admin-header-actions a .sm\\:inline {
+    display: inline;
+  }
+  
+  .admin-header-actions a .sm\\:hidden {
+    display: none;
+  }
+}
+
+/* Content Section */
+.admin-content {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===== TABLET STYLES (768px - 1024px) ===== */
+@media (max-width: 1024px) {
+  .admin-sidebar {
+    width: 240px !important;
+  }
+  
+  .admin-main {
+    margin-left: 0;
+  }
+  
+  .admin-content {
+    padding: 16px 20px;
+  }
+  
+  .admin-header {
+    padding: 12px 20px;
+  }
+  
+  .admin-header > div {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .admin-header h1 {
+    font-size: 20px;
+  }
+  
+  .admin-header-actions {
+    gap: 10px;
+  }
+  
+  .admin-header-actions a {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+}
+
+/* ===== MOBILE STYLES (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  /* Show mobile menu toggle */
+  .admin-menu-toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Hide sidebar in normal flow on mobile */
+  .flex.min-h-screen > .admin-sidebar {
+    display: none !important;
+  }
+  
+  /* Sidebar - fixed position for mobile */
+  .admin-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important; /* Dynamic viewport height for mobile */
+    width: 280px !important;
+    max-width: 85vw !important;
+    z-index: 1000 !important;
+    transform: translateX(-100%) !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: white !important;
+  }
+  
+  .admin-sidebar.active {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    position: fixed !important;
+  }
+  
+  /* Force sidebar to appear when active - highest priority */
+  #admin-sidebar.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    z-index: 1000 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+  
+  /* Ensure sidebar is always in fixed position on mobile */
+  body .admin-sidebar {
+    position: fixed !important;
+  }
+  
+  /* Force sidebar to appear when active - highest priority using ID selector */
+  #admin-sidebar.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    z-index: 1000 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 280px !important;
+    max-width: 85vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    background: white !important;
+  }
+  
+  /* Main content - full width on mobile */
+  .admin-main {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+  
+  /* Header adjustments */
+  .admin-header {
+    padding: 12px 16px;
+    margin-top: 60px; /* Space for menu toggle */
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .admin-header > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .admin-header h1 {
+    font-size: 18px;
+    line-height: 1.4;
+    width: 100%;
+    padding-right: 0;
+  }
+  
+  .admin-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .admin-header-actions a {
+    flex: 1;
+    min-width: fit-content;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .admin-header-actions .inline-flex {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Content padding */
+  .admin-content {
+    padding: 16px 12px;
+  }
+  
+  /* Sidebar header */
+  .admin-sidebar-header {
+    padding: 16px 12px;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  /* Sidebar navigation */
+  .admin-sidebar nav {
+    padding: 12px 8px;
+  }
+  
+  .admin-sidebar nav a {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  /* Logout button in sidebar */
+  .admin-sidebar .nav-logout-form {
+    margin-top: 8px;
+    padding: 0 12px;
+  }
+  
+  .admin-sidebar .nav-logout-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* ===== SMALL MOBILE STYLES (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  .admin-menu-toggle {
+    top: 12px;
+    left: 12px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .admin-sidebar {
+    width: 260px;
+    max-width: 90vw;
+  }
+  
+  .admin-header {
+    padding: 10px 12px;
+    margin-top: 56px;
+  }
+  
+  .admin-header > div {
+    gap: 10px;
+  }
+  
+  .admin-header h1 {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  
+  .admin-header-actions {
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .admin-header-actions a {
+    padding: 8px 12px;
+    font-size: 12px;
+    flex: 1;
+    min-width: calc(50% - 3px);
+  }
+  
+  /* Back button */
+  .admin-header-actions a.inline-flex {
+    min-width: 100%;
+    justify-content: center;
+  }
+  
+  /* Language switcher */
+  .admin-header-actions .inline-flex {
+    width: 100%;
+    font-size: 11px;
+  }
+  
+  .admin-header-actions .inline-flex a {
+    padding: 8px 12px;
+    flex: 1;
+  }
+  
+  .admin-content {
+    padding: 12px 8px;
+  }
+  
+  .admin-sidebar-header {
+    padding: 12px 10px;
+  }
+  
+  .admin-sidebar nav {
+    padding: 10px 6px;
+  }
+  
+  .admin-sidebar nav a {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+
+/* ===== VERY SMALL MOBILE (max-width: 375px) ===== */
+@media (max-width: 375px) {
+  .admin-sidebar {
+    width: 100vw;
+  }
+  
+  .admin-header {
+    padding: 8px 10px;
+  }
+  
+  .admin-header > div {
+    gap: 8px;
+  }
+  
+  .admin-header h1 {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+  
+  .admin-header-actions {
+    gap: 6px;
+  }
+  
+  .admin-header-actions a {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+  
+  .admin-header-actions .inline-flex {
+    font-size: 10px;
+  }
+  
+  .admin-header-actions .inline-flex a {
+    padding: 6px 8px;
+  }
+  
+  .admin-content {
+    padding: 10px 6px;
+  }
+}
+
+/* ===== GRID RESPONSIVE FIXES ===== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .grid-cols-1.sm\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .grid-cols-1.sm\\:grid-cols-2.xl\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .grid.grid-cols-1.md\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Dashboard cards */
+  .bg-neutral-900\/50 {
+    margin-bottom: 16px;
+  }
+  
+  .bg-neutral-900\/50 .px-6 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .bg-neutral-900\/50 .p-6 {
+    padding: 16px;
+  }
+  
+  /* Quick modules buttons */
+  .bg-gradient-to-r {
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .xl\\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  
+  .md\\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .md\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===== TABLE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  thead {
+    display: none;
+  }
+  
+  tbody {
+    display: block;
+  }
+  
+  tr {
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  td {
+    display: block;
+    text-align: right;
+    padding: 8px 0;
+    border: none;
+  }
+  
+  td::before {
+    content: attr(data-label) ": ";
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 8px;
+  }
+}
+
+/* ===== FORM RESPONSIVE ===== */
+@media (max-width: 768px) {
+  form {
+    width: 100%;
+  }
+  
+  .form-group,
+  .form-control-group {
+    margin-bottom: 16px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  button[type="submit"],
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* ===== CARD RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .card,
+  .bg-neutral-900\/50 {
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+  
+  .card-header,
+  .border-b {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+/* ===== MODAL RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .modal,
+  [role="dialog"] {
+    width: 95vw;
+    max-width: 95vw;
+    margin: 20px auto;
+    padding: 16px;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+  
+  .block-mobile {
+    display: block !important;
+  }
+  
+  .flex-mobile {
+    display: flex !important;
+  }
+  
+  .w-full-mobile {
+    width: 100% !important;
+  }
+  
+  .text-center-mobile {
+    text-align: center !important;
+  }
+}
+
+/* ===== SCROLLBAR STYLING FOR MOBILE ===== */
+.admin-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 58, 63, 0.5);
+  border-radius: 2px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 58, 63, 0.7);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.admin-sidebar.active {
+  animation: slideInLeft 0.3s ease;
+}
+
+/* ===== TOUCH IMPROVEMENTS ===== */
+@media (max-width: 768px) {
+  a,
+  button {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255, 58, 63, 0.2);
+  }
+  
+  .admin-sidebar nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ===== RTL SUPPORT ===== */
+[dir="rtl"] .admin-sidebar {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+
+[dir="rtl"] .admin-sidebar.active {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .admin-menu-toggle {
+  left: auto;
+  right: 16px;
+}
+
+[dir="rtl"] .admin-main {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .admin-menu-toggle {
+    right: 12px;
+  }
+}
+

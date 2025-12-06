@@ -1,0 +1,358 @@
+/* ===== SAFARI COMPATIBILITY FIXES ===== */
+
+/* Fix for Safari viewport height issues on mobile */
+@supports (-webkit-touch-callout: none) {
+  /* Safari-specific fixes */
+  
+  /* Fix for 100vh issue on iOS Safari */
+  :root {
+    --vh: 1vh;
+  }
+  
+  /* Critical fix for black screen on iOS Safari */
+  html {
+    height: 100%;
+    min-height: 100%;
+    background: #050505;
+    background: linear-gradient(180deg, #050505 0%, #0b0b0b 60%);
+  }
+  
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    background: #050505;
+    background: linear-gradient(180deg, #050505 0%, #0b0b0b 60%);
+    color: #fff !important;
+    position: relative;
+    z-index: 1;
+  }
+  
+  main {
+    position: relative;
+    z-index: 2;
+    min-height: 50vh;
+    background: transparent;
+  }
+  
+  /* Ensure content is visible */
+  * {
+    visibility: visible !important;
+  }
+  
+  /* Fix for position: fixed on Safari */
+  .navbar {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Fix for backdrop-filter on Safari */
+  .nav-links {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Fix for overflow issues */
+  html, body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix for flexbox issues in Safari */
+  .nav-links {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  
+  /* Fix for transform issues */
+  .hamburger-line {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  
+  /* Fix for transition issues */
+  * {
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Fix for z-index stacking context */
+  .navbar {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Fix for sticky/fixed positioning */
+  .social-rail {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* Safari-specific scrollbar fixes */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 58, 63, 0.5);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 58, 63, 0.7);
+}
+
+/* Fix for Safari text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: #050505 !important;
+  background: linear-gradient(180deg, #050505 0%, #0b0b0b 60%) !important;
+  color: #fff !important;
+  min-height: 100vh !important;
+  min-height: -webkit-fill-available !important;
+}
+
+/* Critical fix for black screen - ensure content is visible */
+html {
+  background: #050505 !important;
+  background: linear-gradient(180deg, #050505 0%, #0b0b0b 60%) !important;
+  min-height: 100% !important;
+}
+
+main {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 50vh !important;
+  background: transparent !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure all content is visible */
+.home-page,
+.hero,
+section {
+  position: relative !important;
+  z-index: 3 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Fix for Safari image rendering */
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Fix for Safari button/input styling */
+button,
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* Fix for Safari checkbox/radio */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+}
+
+/* Fix for Safari select */
+select {
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+/* Fix for Safari focus outline */
+*:focus {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 58, 63, 0.3);
+}
+
+/* Fix for Safari touch actions */
+a,
+button {
+  -webkit-tap-highlight-color: rgba(255, 58, 63, 0.2);
+  touch-action: manipulation;
+}
+
+/* Fix for Safari will-change */
+.tournament-carousel__track {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Fix for Safari animation performance */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fix for Safari gradient rendering */
+.t-card {
+  background: -webkit-linear-gradient(180deg, rgba(26, 28, 40, 0.95) 0%, rgba(10, 12, 20, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(26, 28, 40, 0.95) 0%, rgba(10, 12, 20, 0.95) 100%);
+}
+
+/* Fix for Safari border-radius */
+.t-card,
+.navbar-toggler,
+.t-card__link {
+  -webkit-border-radius: 24px;
+  border-radius: 24px;
+}
+
+/* Fix for Safari box-shadow */
+.t-card {
+  -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Fix for Safari overflow scrolling */
+.nav-links {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+/* Fix for Safari position sticky */
+@media (max-width: 768px) {
+  .navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Fix for Safari viewport units on mobile */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    max-height: calc(100vh - 60px);
+    max-height: calc(var(--vh, 1vh) * 100 - 60px);
+  }
+}
+
+/* Fix for Safari flexbox gap (older versions) */
+@supports not (gap: 1rem) {
+  .nav-links {
+    margin: -0.5rem;
+  }
+  
+  .nav-links > * {
+    margin: 0.5rem;
+  }
+}
+
+/* Fix for Safari clip-path */
+@supports not (clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)) {
+  .t-card__media {
+    overflow: hidden;
+  }
+}
+
+/* Fix for Safari aspect-ratio */
+@supports not (aspect-ratio: 16 / 9) {
+  .t-card__media {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+  }
+  
+  .t-card__media img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Fix for Safari CSS Grid (older versions) */
+@supports not (display: grid) {
+  .tournament-carousel__track {
+    display: -webkit-flex;
+    display: flex;
+  }
+}
+
+/* Fix for Safari backdrop-filter fallback */
+@supports not (backdrop-filter: blur(10px)) {
+  .nav-links {
+    background: rgba(0, 0, 0, 0.95) !important;
+  }
+}
+
+/* Fix for Safari inset property */
+@supports not (inset: 0) {
+  .hamburger-line {
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+/* Fix for Safari :is() selector */
+@supports not selector(:is(*)) {
+  .tournament-slide:hover .t-card__media img,
+  .tournament-slide:focus-within .t-card__media img {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+}
+
+/* Fix for Safari container queries (if used) */
+@supports not (container-type: inline-size) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
